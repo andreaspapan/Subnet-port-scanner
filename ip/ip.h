@@ -11,13 +11,13 @@
 
 typedef struct IPv4 {
     char *ipStrValue;
-    uint32_t ipIntValue;
-    in_addr_t ipAddr;
+    in_addr_t ipIntValue;
 
 } IPv4;
 
 int initIP(IPv4 **ipv4);
 int destroyIP(IPv4 *ipv4);
-IPv4 *generateMask(int prefixLength);
+IPv4 *generateMask(int prefixLength,bool type);
+IPv4 *generateAddress(IPv4 *subnetMask,IPv4 *ipCIDR,bool type);
 
 #endif
